@@ -1,9 +1,13 @@
 {
   "$schema": "https://schema.kunkun.sh",
   "name": "kunkun-ext-zed",
-  "version": "0.0.10",
+  "version": "0.0.1",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kunkunsh/kunkun-ext-zed"
+  },
   "kunkun": {
     "name": "Zed Recent Projects",
     "shortDescription": "Open Zed Recent Projects",
