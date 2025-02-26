@@ -84,6 +84,24 @@ function openWithZed(path: string) {
 
 class ExtensionTemplate extends TemplateUiCommand {
   async load() {
+    shell.hasCommand("zed").then((hasCommand) => {
+      if (!hasCommand) {
+        toast.error(
+          "zed command not installed to PATH, please install it the 'zed' command."
+        );
+        return ui.goBack();
+      }
+    });
+
+    shell.hasCommand("deno").then((hasCommand) => {
+      if (!hasCommand) {
+        toast.error(
+          "This extension requires the 'deno' command to be installed to PATH, but not detected."
+        );
+        return ui.goBack();
+      }
+    });
+
     ui.setSearchBarPlaceholder(
       "Enter a search term, and press enter to search"
     );
