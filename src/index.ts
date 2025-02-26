@@ -22,7 +22,7 @@ async function getDbPath() {
       "Library/Application Support/Zed/db/0-stable/db.sqlite"
     );
   } else if (platform === "linux") {
-    return await path.join(homePath, ".config/zed/db/0-stable/db.sqlite");
+    return await path.join(homePath, ".local/share/zed/db/0-stable/db.sqlite");
   } else if (platform === "windows") {
     return await path.join(homePath, "AppData/Local/Zed/db/0-stable/db.sqlite");
   } else {
@@ -83,7 +83,7 @@ function openWithZed(path: string) {
 }
 
 class ExtensionTemplate extends TemplateUiCommand {
-  load() {
+  async load() {
     ui.setSearchBarPlaceholder(
       "Enter a search term, and press enter to search"
     );
@@ -92,6 +92,12 @@ class ExtensionTemplate extends TemplateUiCommand {
         items: [],
       })
     );
+    const platform = await os.platform();
+    if (platform === "windows") {
+      toast.error("Windows platform is not supported yet");
+      return ui.goBack();
+    }
+
     return getRecentProjects()
       .then(async (projects) => {
         // filter out non-existent projects

@@ -37,10 +37,12 @@
           {
             "path": "$EXTENSION/deno-src/index.ts",
             "read": [
-              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite"
+              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite",
+              "$HOME/.local/share/zed/db/0-stable/db.sqlite"
             ],
             "write": [
-              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite"
+              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite",
+              "$HOME/.local/share/zed/db/0-stable/db.sqlite"
             ]
           }
         ]
