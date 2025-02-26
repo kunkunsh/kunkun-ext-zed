@@ -1,19 +1,53 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@kunkun/api@~0.1.3": "0.1.3",
     "jsr:@std/assert@1": "1.0.11",
+    "jsr:@std/fs@*": "1.0.9",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@valibot/valibot@~0.42.1": "0.42.1",
     "npm:@kksh/api@0.1.5": "0.1.5",
+    "npm:@kksh/api@~0.1.3": "0.1.5",
+    "npm:@tauri-apps/api@^2.2.0": "2.2.0",
+    "npm:@tauri-apps/plugin-fs@^2.2.0": "2.2.0",
+    "npm:@tauri-apps/plugin-os@^2.2.0": "2.2.0",
     "npm:@types/bun@latest": "1.2.4",
-    "npm:i18next@^23.15.1": "23.16.8"
+    "npm:i18next@^23.15.1": "23.16.8",
+    "npm:kkrpc@~0.1.1": "0.1.2_typescript@5.7.3",
+    "npm:minimatch@^10.0.1": "10.0.1",
+    "npm:node-fetch@^3.3.2": "3.3.2",
+    "npm:semver@^7.6.3": "7.7.1",
+    "npm:svelte-sonner@~0.3.28": "0.3.28_svelte@5.20.4__acorn@8.14.0",
+    "npm:tauri-api-adapter@~0.3.20": "0.3.23_typescript@5.7.3",
+    "npm:tauri-plugin-shellx-api@^2.0.14": "2.0.15",
+    "npm:valibot@^1.0.0-beta.10": "1.0.0-rc.2_typescript@5.7.3"
   },
   "jsr": {
+    "@kunkun/api@0.1.3": {
+      "integrity": "f6e9d07a227c9f71c8ce7b51ad48a99a8a7a35b062a90df9f96841d1844bb400",
+      "dependencies": [
+        "npm:@kksh/api@~0.1.3",
+        "npm:@tauri-apps/api",
+        "npm:@tauri-apps/plugin-fs",
+        "npm:@tauri-apps/plugin-os",
+        "npm:kkrpc",
+        "npm:minimatch",
+        "npm:node-fetch",
+        "npm:semver",
+        "npm:svelte-sonner",
+        "npm:tauri-api-adapter",
+        "npm:tauri-plugin-shellx-api",
+        "npm:valibot"
+      ]
+    },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
         "jsr:@std/internal"
       ]
+    },
+    "@std/fs@1.0.9": {
+      "integrity": "3eef7e3ed3d317b29432c7dcb3b20122820dbc574263f721cb0248ad91bad890"
     },
     "@std/internal@1.0.5": {
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
@@ -1580,6 +1614,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@kunkun/api@~0.1.3",
       "jsr:@std/assert@1",
       "jsr:@valibot/valibot@~0.42.1"
     ],

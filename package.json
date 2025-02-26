@@ -5,23 +5,58 @@
   "license": "MIT",
   "type": "module",
   "kunkun": {
-    "name": "TODO: Extension Display Name",
-    "shortDescription": "A Worker Extension Template",
-    "longDescription": "A Worker Extension Template",
+    "name": "Zed Recent Projects",
+    "shortDescription": "Open Zed Recent Projects",
+    "longDescription": "Open Zed Recent Projects",
     "identifier": "kunkun-ext-zed",
     "permissions": [
-      "fetch:all",
-      "clipboard:read-all"
+      {
+        "permission": "shell:execute",
+        "allow": [
+          {
+            "cmd": {
+              "program": "zed",
+              "args": [
+                ".+"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "permission": "fs:exists",
+        "allow": [
+          {
+            "path": "**"
+          }
+        ]
+      },
+      {
+        "permission": "shell:deno:spawn",
+        "allow": [
+          {
+            "path": "$EXTENSION/deno-src/index.ts",
+            "read": [
+              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite"
+            ],
+            "write": [
+              "$HOME/Library/Application Support/Zed/db/0-stable/db.sqlite"
+            ]
+          }
+        ]
+      },
+      "shell:stdin-write",
+      "shell:kill"
     ],
     "demoImages": [],
     "icon": {
       "type": "iconify",
-      "value": "material-symbols:extension"
+      "value": "simple-icons:zedindustries"
     },
     "customUiCmds": [],
     "templateUiCmds": [
       {
-        "name": "TODO: Template Command Display Name",
+        "name": "Open Zed Recent Projects",
         "main": "dist/index.js",
         "cmds": []
       }
