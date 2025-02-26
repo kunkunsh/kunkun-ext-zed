@@ -54,7 +54,9 @@
       "shell:stdin-write",
       "shell:kill"
     ],
-    "demoImages": [],
+    "demoImages": [
+      "https://i.imgur.com/6SpxvDO.png"
+    ],
     "icon": {
       "type": "iconify",
       "value": "simple-icons:zedindustries"
